@@ -1,0 +1,1 @@
+insert into cita (cedula, nombre, apellido, fecha_cita) values (:cedula :nombre, :apellido, :fechaCita)

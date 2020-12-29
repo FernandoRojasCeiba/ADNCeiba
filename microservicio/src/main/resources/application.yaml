@@ -1,0 +1,28 @@
+jasypt:
+   encryptor:
+      password: ${jasyptpwd:secretkey}
+      algorithm: PBEWithMD5AndDES
+
+server:
+   port: 8080
+   servlet:
+      context-path: /citas
+      session:
+         timeout: 21600s
+
+spring:
+   datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      jdbcUrl: jdbc:mysql://localhost:3306/Prueba
+      username: root
+      password: Bayonetta91F
+      hikari:
+         poolName: pool
+
+   flyway:
+      enabled: true
+      schemas: public
+      locations: classpath:db/migration/DDL, resources/DDL2
+      baselineOnMigrate: true
+      check-location: true
