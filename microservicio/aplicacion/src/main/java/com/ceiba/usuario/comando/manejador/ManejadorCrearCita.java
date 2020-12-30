@@ -6,7 +6,9 @@ import com.ceiba.usuario.comando.ComandoCita;
 import com.ceiba.usuario.comando.fabrica.FabricaCita;
 import com.ceiba.usuario.modelo.entidad.Cita;
 import com.ceiba.usuario.servicio.ServicioCrearCita;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ManejadorCrearCita implements ManejadorComandoRespuesta<ComandoCita, ComandoRespuesta<Long>> {
 
     private final FabricaCita factoryCita;

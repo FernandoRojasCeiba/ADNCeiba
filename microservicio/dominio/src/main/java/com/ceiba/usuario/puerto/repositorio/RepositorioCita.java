@@ -15,11 +15,11 @@ public interface RepositorioCita {
      * Permite actualizar una cita
      * @param cita que se va a actualizar
      */
-    //void actualizarCita(Cita cita);
+    void actualizarCita(Cita cita);
 
     /**
      * Permite eliminar una cita
      * @param id de cita que se va a eliminar
      */
-    //void eliminarCita(Long id);
+    void eliminarCita(Long id);
 }
