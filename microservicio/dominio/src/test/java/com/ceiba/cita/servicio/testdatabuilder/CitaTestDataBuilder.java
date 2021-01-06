@@ -1,6 +1,6 @@
 package com.ceiba.cita.servicio.testdatabuilder;
 
-import com.ceiba.usuario.modelo.entidad.Cita;
+import com.ceiba.cita.modelo.entidad.Cita;
 
 import java.util.Date;
 

@@ -1,10 +1,8 @@
 package com.ceiba.cita.controlador;
 
 import com.ceiba.ApplicationMock;
+import com.ceiba.cita.comando.ComandoCita;
 import com.ceiba.cita.servicio.testdatabuilder.ComandoCitaTestDataBuilder;
-import com.ceiba.usuario.comando.ComandoCita;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.usuario.servicio.testdatabuilder.ComandoUsuarioTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

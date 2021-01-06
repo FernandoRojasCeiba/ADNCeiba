@@ -6,8 +6,6 @@ import com.ceiba.BasePrueba;
 import com.ceiba.cita.servicio.testdatabuilder.CitaTestDataBuilder;
 
 import com.ceiba.dominio.excepcion.ExcepcionFechaNoValida;
-import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
-import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
 import org.junit.Test;
 
 import java.text.ParseException;
