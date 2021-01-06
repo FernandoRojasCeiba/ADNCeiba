@@ -1,12 +1,11 @@
 package com.ceiba.dominio;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.ceiba.dominio.excepcion.ExcepcionFechaNoValida;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
@@ -26,6 +25,17 @@ public class ValidadorArgumento {
             throw new ExcepcionLongitudValor(mensaje);
         }
     }
+
+    public static void validarFecha(Date fecha, String mensaje){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(fecha);
+        calendar.add(Calendar.DAY_OF_YEAR, 1);
+        int numDia = calendar.get(Calendar.DAY_OF_WEEK);
+
+        if (numDia == Calendar.SUNDAY || numDia == Calendar.SATURDAY){
+            throw new ExcepcionFechaNoValida(mensaje);
+        }
+    }
     
     public static <T> void validarNoVacio(List<T> lista, String mensaje) {
         if (lista.isEmpty()) {
@@ -34,7 +44,7 @@ public class ValidadorArgumento {
     }
 
     public static void validarPositivo(Double valor, String mensaje) {
-        if (valor <= 0) {
+        if (valor < 1) {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }

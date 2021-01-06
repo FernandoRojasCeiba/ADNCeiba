@@ -1,2 +1,2 @@
 select id,cedula,nombre,apellido,fecha_cita, tipo_cita, valor
-from cita
+from cita where id = :id

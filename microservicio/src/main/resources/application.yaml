@@ -23,6 +23,6 @@ spring:
    flyway:
       enabled: true
       schemas: public
-      locations: classpath:db/migration/DDL, resources/DDL2
+      locations: classpath:db/migration/DDL
       baselineOnMigrate: true
       check-location: true

@@ -1,0 +1,1 @@
+select count(1) from cita where cedula = :cedula and tipo_cita = :tipoCita;
