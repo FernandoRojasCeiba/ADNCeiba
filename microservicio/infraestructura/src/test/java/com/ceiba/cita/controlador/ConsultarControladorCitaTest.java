@@ -23,7 +23,7 @@ public class ConsultarControladorCitaTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
+   @Test
     public void consultarCitas() throws Exception {
         // arrange
 
@@ -56,5 +56,4 @@ public class ConsultarControladorCitaTest {
                 .andExpect(status().isOk());
     }
 
-}
-*/
+}*/
