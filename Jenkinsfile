@@ -53,7 +53,7 @@ pipeline {
         sh 'gradle --b ./microservicio/build.gradle test'
 		
 		echo "------------>JacocoTestReport Tests<------------"
-		sh 'gradle --b ./build.gradle jacocoTestReport'
+		sh 'gradle --b ./microservicio/build.gradle jacocoTestReport'
       }
     }
 
