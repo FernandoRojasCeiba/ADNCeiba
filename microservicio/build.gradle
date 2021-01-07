@@ -83,7 +83,3 @@ bootJar {
     baseName = 'citas'
     version =  version
 }
-
-plugins {
-	id "org.sonarqube" version "2.7"
-}
