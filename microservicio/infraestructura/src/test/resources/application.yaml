@@ -6,10 +6,3 @@ spring:
       password:
       hikari:
          poolName: pool
-
-   flyway:
-      enabled: true
-      schemas: public
-      locations: classpath:db/migration/DML
-      baselineOnMigrate: true
-      check-location: true

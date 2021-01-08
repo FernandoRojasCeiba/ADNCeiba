@@ -1,4 +1,4 @@
-/*package com.ceiba.cita.controlador;
+package com.ceiba.cita.controlador;
 
 import com.ceiba.ApplicationMock;
 import org.junit.Test;
@@ -33,27 +33,4 @@ public class ConsultarControladorCitaTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(0)));
     }
-
-    @Test
-    public void consultarPorID() throws Exception{
-        //arrange
-        Long id = 2L;
-
-        //act - assert
-        mockMvc.perform(get("/consultas/{id}", id)
-        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    public void consultarPorCedula() throws Exception{
-        //arrange
-        String cedula = "111222333";
-
-        //act - assert
-        mockMvc.perform(get("/consultas/{cedula}", cedula)
-        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
-
-}*/
+}

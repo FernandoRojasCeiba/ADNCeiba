@@ -2,6 +2,8 @@ package com.ceiba.cita.servicio.testdatabuilder;
 
 import com.ceiba.cita.modelo.entidad.Cita;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CitaTestDataBuilder {
@@ -14,12 +16,13 @@ public class CitaTestDataBuilder {
     private int tipoCita;
     private int valor;
 
-    public CitaTestDataBuilder(){
-        cedula = "111222333";
+    public CitaTestDataBuilder() throws ParseException {
+        cedula = "8888888";
         nombre = "Fernando";
         apellido = "Rojas";
-        fechaCita = new Date();
-        tipoCita = 1;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        fechaCita = simpleDateFormat.parse("2020-12-16");
+        tipoCita = 2;
     }
 
     public CitaTestDataBuilder porCedula(String cedula){
@@ -44,6 +47,12 @@ public class CitaTestDataBuilder {
 
     public CitaTestDataBuilder addValorCita(int valor){
         this.valor = valor;
+        return this;
+    }
+
+    public CitaTestDataBuilder conTipoYCedula(String cedula, int tipoCita){
+        this.cedula = cedula;
+        this.tipoCita = tipoCita;
         return this;
     }
 
