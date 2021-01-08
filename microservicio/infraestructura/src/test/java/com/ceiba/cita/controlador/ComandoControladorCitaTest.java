@@ -13,6 +13,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -31,7 +34,9 @@ public class ComandoControladorCitaTest {
     @Test
     public void crearCita() throws Exception{
         //arrange
-        ComandoCita comandoCita = new ComandoCitaTestDataBuilder().build();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date fechaValida = simpleDateFormat.parse("2020-12-16");
+        ComandoCita comandoCita = new ComandoCitaTestDataBuilder().conFecha(fechaValida).build();
 
         //act - assert
         mockMvc.perform(post("/consultas")
@@ -45,7 +50,9 @@ public class ComandoControladorCitaTest {
     public void actualizarCita() throws Exception{
         //arrange
         Long id = 2L;
-        ComandoCita comandoCita = new ComandoCitaTestDataBuilder().build();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date fechaValida = simpleDateFormat.parse("2020-12-16");
+        ComandoCita comandoCita = new ComandoCitaTestDataBuilder().conFecha(fechaValida).build();
 
         //act - assert
         mockMvc.perform(put("/consultas/{id}", id)

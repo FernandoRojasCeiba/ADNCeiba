@@ -19,9 +19,13 @@ public class ComandoCitaTestDataBuilder {
         cedula = "111122223333";
         nombre = UUID.randomUUID().toString();
         apellido = UUID.randomUUID().toString();
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        fechaCita = simpleDateFormat.parse("2020-12-16");
+		fechaCita = new Date();
         tipoCita = 1;
+    }
+
+    public ComandoCitaTestDataBuilder conFecha(Date fechaCita){
+        this.fechaCita = fechaCita;
+        return this;
     }
 
     public ComandoCita build(){
