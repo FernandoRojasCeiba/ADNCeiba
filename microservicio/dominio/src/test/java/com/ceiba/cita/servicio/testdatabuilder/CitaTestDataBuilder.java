@@ -56,6 +56,11 @@ public class CitaTestDataBuilder {
         return this;
     }
 
+    public CitaTestDataBuilder conTipoCita(int tipoCita){
+        this.tipoCita = tipoCita;
+        return this;
+    }
+
     public Cita build(){
         return new Cita(id, cedula, nombre, apellido, fechaCita, tipoCita, valor);
     }

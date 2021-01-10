@@ -3,10 +3,13 @@ package com.ceiba.cita.servicio;
 
 
 import com.ceiba.BasePrueba;
+import com.ceiba.cita.modelo.entidad.Cita;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.cita.servicio.testdatabuilder.CitaTestDataBuilder;
 
 import com.ceiba.dominio.excepcion.ExcepcionFechaNoValida;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,6 +19,9 @@ import static org.junit.Assert.*;
 
 public class ServicioActualizarCitaTest {
 
+    private static final Long ID_CITA = 1L;
+
+    private RepositorioCita repositorioCita;
 
     @Test
     public void validarFechaActualizada() throws ParseException {
