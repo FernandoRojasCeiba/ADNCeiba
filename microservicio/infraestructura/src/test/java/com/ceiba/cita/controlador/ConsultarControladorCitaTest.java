@@ -35,16 +35,5 @@ public class ConsultarControladorCitaTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(0)));
     }
-
-    @Test
-    public void  consultarCitasPorCedula() throws Exception{
-       // Arrange
-
-        String cedula = "1036946621";
-
-        // Act - Assert
-        mockMvc.perform(get("/consultas/{cedula}", cedula)
-        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
+    
 }
