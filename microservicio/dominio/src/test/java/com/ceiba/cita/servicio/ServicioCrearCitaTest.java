@@ -91,7 +91,7 @@ public class ServicioCrearCitaTest {
         Date fechaEsperada = simpleDateFormat.parse("2020-12-25");
 
         // Assert
-        assertFalse(fecha.equals(fechaEsperada));
+        assertTrue(fecha.equals(fechaEsperada));
     }
 
     @Test
