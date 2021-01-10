@@ -5,6 +5,8 @@ import com.ceiba.BasePrueba;
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.cita.servicio.testdatabuilder.CitaTestDataBuilder;
+import com.ceiba.dominio.ValidadorArgumento;
+import com.ceiba.dominio.business.AsignarParametros;
 import com.ceiba.dominio.excepcion.ExcepcionFechaNoValida;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import org.junit.Before;
@@ -122,6 +124,20 @@ public class ServicioCrearCitaTest {
         CitaTestDataBuilder citaTestDataBuilder = new CitaTestDataBuilder().addFecha(fechaNoValida);
         // act - assert
         BasePrueba.assertThrows(() -> citaTestDataBuilder.build(), ExcepcionFechaNoValida.class, "La fecha seleccionada no puede ser sábado o domingo");
+    }
+
+    @Test
+    public void fechaAsignada() throws Exception{
+        // Arrange
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date fechaValida = simpleDateFormat.parse("2020-12-23");
+        Date fechaEsperada = simpleDateFormat.parse("2020-12-25");
+
+        // Act
+        Date fechaCita = AsignarParametros.AsignarFecha(fechaValida);
+
+        // Assert
+        assertTrue(fechaEsperada.equals(fechaCita));
     }
 
 }
