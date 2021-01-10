@@ -77,20 +77,18 @@ public class ServicioCrearCitaTest {
     }
 
     @Test
-    void asignarFechaCita() throws ParseException {
+    public void tipoCita() throws ParseException{
         // Arrange
-
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date fechaValida = simpleDateFormat.parse("2020-12-23");
         Cita cita = new CitaTestDataBuilder().porID(ID_CITA).addFecha(fechaValida).build();
         Mockito.when(repositorioCita.crearCita(cita)).thenReturn(ID_CITA);
 
         // Act
-        Date fecha = cita.getFechaCita();
-        Date fechaEsperada = simpleDateFormat.parse("2020-12-25");
+        int tipoCita = cita.getTipoCita();
 
         // Assert
-        assertTrue(fecha.equals(fechaEsperada));
+        assertEquals(2, tipoCita);
     }
 
     @Test
