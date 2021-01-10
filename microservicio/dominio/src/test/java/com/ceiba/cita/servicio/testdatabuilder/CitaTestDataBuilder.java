@@ -25,6 +25,16 @@ public class CitaTestDataBuilder {
         tipoCita = 2;
     }
 
+    public CitaTestDataBuilder conNombre(String nombre){
+        this.nombre = nombre;
+        return this;
+    }
+
+    public  CitaTestDataBuilder conApellido(String apellido){
+        this.apellido = apellido;
+        return this;
+    }
+
     public CitaTestDataBuilder porCedula(String cedula){
         this.cedula = cedula;
         return this;
