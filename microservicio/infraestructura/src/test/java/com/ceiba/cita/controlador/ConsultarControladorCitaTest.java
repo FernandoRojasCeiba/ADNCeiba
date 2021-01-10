@@ -32,8 +32,7 @@ public class ConsultarControladorCitaTest {
         // act - assert
         mockMvc.perform(get("/consultas")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(0)));
+                .andExpect(status().isOk());
     }
-    
+
 }
