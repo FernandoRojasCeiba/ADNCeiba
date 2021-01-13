@@ -5,8 +5,8 @@ import lombok.Getter;
 import java.util.Date;
 
 import static com.ceiba.dominio.ValidadorArgumento.*;
-import static com.ceiba.dominio.business.AsignarParametros.AsignarFecha;
-import static com.ceiba.dominio.business.AsignarParametros.asignarValorCita;
+import static com.ceiba.cita.business.AsignarParametros.AsignarFecha;
+import static com.ceiba.cita.business.AsignarParametros.asignarValorCita;
 
 @Getter
 public class Cita {

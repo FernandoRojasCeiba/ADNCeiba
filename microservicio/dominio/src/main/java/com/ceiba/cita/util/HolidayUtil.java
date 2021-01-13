@@ -1,4 +1,4 @@
-package com.ceiba.dominio.util;
+package com.ceiba.cita.util;
 
 import java.util.ArrayList;
 import java.util.Calendar;

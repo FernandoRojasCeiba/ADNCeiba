@@ -1,6 +1,6 @@
-package com.ceiba.dominio.business;
+package com.ceiba.cita.business;
 
-import com.ceiba.dominio.util.HolidayUtil;
+import com.ceiba.cita.util.HolidayUtil;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
